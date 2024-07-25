@@ -5,7 +5,8 @@ import {
   sendAndConfirmTransaction,
   SystemProgram,
   Transaction,
-  clusterApiUrl
+  clusterApiUrl,
+  LAMPORTS_PER_SOL
 } from "@solana/web3.js";
 import walletKey from "./wallet.json" assert { type: "json" };
 
@@ -22,11 +23,14 @@ console.log(to, from);
 const transfer = async () => {
   const balance = await connection.getBalance(from.publicKey);
   console.log(balance);
-
-  if (balance === 0) {
+   
+  if (balance < 0) {
     // write a function that tops the balance if it not enough
 
     console.log("Oga you no have money");
+
+    // Airdrop fund
+    airdropToken(from.publicKey)
   } else {
     // Look in for capitaliztion
     const transaction = new Transaction().add(
@@ -73,3 +77,21 @@ const transfer = async () => {
 };
 
 transfer();
+
+
+const airdropToken = async (walletAddress) => {
+    const connection = new Connection(
+        "https://api.devnet.solana.com",
+        "confirmed"
+      );
+
+    const signature = await connection.requestAirdrop(
+        walletAddress,
+        LAMPORTS_PER_SOL * 0.2
+      );
+
+    const res = await connection.confirmTransaction(signature);
+    console.log(res)
+
+    transfer();
+} 

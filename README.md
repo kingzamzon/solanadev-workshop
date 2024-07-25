@@ -22,3 +22,9 @@ FScyM7Utyv6pF8dPRhCDSH3V88Z8MxPagpbHJsLgBuF1
 ## Transfer to Wallet
 
 [4E9b2RaZFs1eKYCXriJSFwmkp4ghyXdNpapKVnTgU7B1](https://solscan.io/account/4E9b2RaZFs1eKYCXriJSFwmkp4ghyXdNpapKVnTgU7B1?cluster=devnet)
+
+## Transaction if balance is less than zero
+
+For the test I used amount less than the balance i have
+
+[3YQS98LrHcYngXQKTWQo8LxQTpVB94pFiBC7o1B2mvKphNXrYKyqhbzCarY6DtKQabWCCWrfhfThRVQJyaHANgQw](https://solscan.io/tx/3YQS98LrHcYngXQKTWQo8LxQTpVB94pFiBC7o1B2mvKphNXrYKyqhbzCarY6DtKQabWCCWrfhfThRVQJyaHANgQw?cluster=devnet)
