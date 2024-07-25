@@ -11,6 +11,8 @@ console.log(publicKey)
 console.log(privateKey)
 
 export const generateKey = () => {
-    publicKey,
-    privateKey
+    // publicKey,
+    // privateKey
+
+    return {publicKey, privateKey}
 }
